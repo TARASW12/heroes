@@ -1,97 +1,104 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Hero Search React Native App
 
-# Getting Started
+This is a React Native application for searching and managing superheroes.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Prerequisites
 
-## Step 1: Start Metro
+Before you begin, ensure you have met the following requirements:
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- **Node.js & npm/Yarn:** You will need Node.js (LTS version recommended) and npm (which comes with Node.js) or Yarn installed on your system.
+  - [Node.js download](https://nodejs.org/)
+  - [Yarn installation](https://classic.yarnpkg.com/en/docs/install)
+- **React Native Development Environment:** Follow the official React Native documentation to set up your development environment for your specific OS (macOS, Windows, Linux) and target mobile platforms (iOS, Android).
+  - Go to [React Native Environment Setup](https://reactnative.dev/docs/environment-setup) and select the **React Native CLI Quickstart** tab.
+  - Ensure you have installed the necessary dependencies for your target platform (e.g., Xcode for iOS, Android Studio & Android SDK for Android).
+- **CocoaPods (for iOS development):** If you plan to run the app on iOS, you will need CocoaPods.
+  - [CocoaPods installation](https://guides.cocoapods.org/using/getting-started.html)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Setup and Installation
 
-```sh
-# Using npm
-npm start
+1.  **Clone the repository (if applicable):**
 
-# OR using Yarn
-yarn start
-```
+    ```bash
+    git clone <repository-url>
+    cd hero
+    ```
 
-## Step 2: Build and run your app
+2.  **Install project dependencies:**
+    Navigate to the project's root directory (`hero`) in your terminal and run:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+    ```bash
+    npm install
+    ```
 
-### Android
+    or if you prefer Yarn:
 
-```sh
-# Using npm
-npm run android
+    ```bash
+    yarn install
+    ```
 
-# OR using Yarn
-yarn android
-```
+3.  **Install iOS Dependencies (if developing for iOS):**
+    Navigate to the `ios` directory and install the CocoaPods dependencies:
+    ```bash
+    cd ios
+    pod install
+    cd ..
+    ```
 
-### iOS
+## Running the Application
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Ensure you have an emulator running or a physical device connected and configured for development.
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+1.  **Start the Metro Bundler:**
+    In the project root directory (`hero`), open a new terminal window and run:
 
-```sh
-bundle install
-```
+    ```bash
+    npm start
+    ```
 
-Then, and every time you update your native dependencies, run:
+    or with Yarn:
 
-```sh
-bundle exec pod install
-```
+    ```bash
+    yarn start
+    ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+    Keep this terminal window open.
 
-```sh
-# Using npm
-npm run ios
+2.  **Run on Android:**
+    In another terminal window (still in the project root directory `hero`), run:
 
-# OR using Yarn
-yarn ios
-```
+    ```bash
+    npm run android
+    ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+    or with Yarn:
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+    ```bash
+    yarn android
+    ```
 
-## Step 3: Modify your app
+3.  **Run on iOS:**
+    In another terminal window (still in the project root directory `hero`), run:
+    ```bash
+    npm run ios
+    ```
+    or with Yarn:
+    ```bash
+    yarn ios
+    ```
+    Alternatively, you can open the `.xcworkspace` file in the `ios` folder with Xcode and run the project from there.
 
-Now that you have successfully run the app, let's make changes!
+## Troubleshooting
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+- **"Failed to get the SHA-1 for..." error in Metro:** Try resetting the cache when starting Metro:
+  ```bash
+  npm start -- --reset-cache
+  ```
+  or
+  ```bash
+  yarn start --reset-cache
+  ```
+- **iOS build issues:** Ensure CocoaPods are correctly installed and up to date. Sometimes, cleaning the build folder in Xcode (Product > Clean Build Folder) can help.
+- **Android build issues:** Ensure your Android SDK and build tools are correctly configured. Check Android Studio for any SDK-related errors.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This README provides a basic guide. Depending on the project's specific native modules or configurations, additional setup steps might be required.
